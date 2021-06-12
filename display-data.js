@@ -10,20 +10,21 @@ let filteredFaq = [];
 //create search bar listener function
 searchBar.addEventListener('keyup', (e) => {
 	const searchString = e.target.value.toLowerCase();
-	console.log(searchString);
+	const searchArray = searchString.split(' ');
+	console.log("Your search array.")
+	console.log(searchArray);
 	filteredFaq = faqData.filter((question) => {
-		return (
-			question.label.toLowerCase().includes(searchString) || 
-			question.content.toLowerCase().includes(searchString)
-		);
+		for (j = 0; j < searchArray.length; j++) {
+			return (
+				question.label.toLowerCase().includes(searchArray[j]) || 
+				question.content.toLowerCase().includes(searchArray[j])
+			);
+		}
 	});
+	console.log("Your search results");
 	console.log(filteredFaq);
 	displaySearches(filteredFaq)
 });
-
-/* GITHUB JSON LINK
-https://markoco14.github.io/google-sheet-test/faqDataJSON.json
-*/
 
 const loadFaq = async () => {
 	try {
@@ -40,13 +41,23 @@ const loadFaq = async () => {
 const displayFaq = function(data) {
 	for (i = 0; i < faqData.length; i++) {
 		const div = document.createElement('div');
+		const input = document.createElement('input');
 		const label = document.createElement('label');
 		const p = document.createElement('p');
+
+		//set input and label attributes
+		input.setAttribute('id', `toggle${faqData[i].id}`)
+		input.setAttribute('class', 'checkbox');
+		input.setAttribute('type', 'checkbox');
+		label.setAttribute('for', `toggle${faqData[i].id}`)
+	
+		//set question and answer content (innerHTML)
 		label.innerHTML = faqData[i].label;
 		p.innerHTML = faqData[i].content;
+		div.appendChild(input);
 		div.appendChild(label);
 		div.appendChild(p);
-		div.setAttribute('id', `${faqData[i].id}`)
+		div.setAttribute('id', `question${faqData[i].id}`)
 		faqContainer.appendChild(div);
 	}
 }
@@ -63,14 +74,10 @@ const displaySearches = function(filteredFaq) {
 		const a = document.createElement('a');
 		a.textContent = filteredFaq[i].label;
 		a.setAttribute('class','searchElement');
-		a.setAttribute('href', `#${filteredFaq[i].id}`)
-		console.log(a);
+		a.setAttribute('href', `#question${filteredFaq[i].id}`)
 		div.appendChild(a);
 		searchResults.appendChild(div);
 	}
-
-	
-
 
 	//clear search results if search bar empty
 	if (searchBar.value === ''){
@@ -82,3 +89,4 @@ const displaySearches = function(filteredFaq) {
 }
 
 loadFaq()
+
