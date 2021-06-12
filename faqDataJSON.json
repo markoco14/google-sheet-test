@@ -1,0 +1,24 @@
+{
+"user": [
+{
+"id": 1,
+"label": "I'm in Taichung and worried I've got COVID, what should I do? Is there a covid screening station in Taichung where I can get a rapid antigen COVID-19 test? How do I make an appointment to get tested? What are the guidelines and precautions for testing?",
+"content": "On 2021/06/08 this hospital has set up a free, outdoors COVID-19 Fast Screening Station to provide free rapid antigen testing services for Taichung citizens.<br>To get tested, you have to make an online appointment (Mon-Fri 13:00-17:00), click [English Version] at the top.<br>1. Bring ID cards, health insurance cards, and wear medical masks throughout the journey.<br>2. You can only be tested after making an online appointment and please come early.<br>3. The screening service will be adjusted according to the supply of tests, and will stop immediately if they run out of testing materials.<br>4. If the test result is negative, you will be notified on the spot, and no paper report will be provided (result can be checked in your health passbook 1-3 days after).<br>5. Those who test positive will be transferred to the emergency room for treatment.<br>You can call the hospital service line 04-2258-66-88 for more information but English service is not guaranteed."
+},
+{
+"id": 2,
+"label": "Is Taichung City hall still open for citizens? Where can I go for government services in Taichung during the current pandemic?",
+"content": "Taichung City hall public services require access control and are centralized at Taichung City Yangming building on the first floor at No. 36, Yangming Street, Fengyuan District, Taichung City, 420. Remaining floors and spaces are only accessible to city employees."
+},
+{
+"id": 3,
+"label": "Are there any English videos with information about confirmed COVID-19 cases?",
+"content": "Yes. The CDC has released 3 videos on their official YouTube channel with English audio and subtitles: What to do if you had contact with a confirmed COVID-19 case? What to do if you've been diagnosed with COVID-19? How to care for a COVID-19 patient at home? We appreciate the CDC's continued efforts and hope to see more COVID-19 videos soon."
+},
+{
+"id": "",
+"label": "",
+"content": ""
+}
+]
+}
