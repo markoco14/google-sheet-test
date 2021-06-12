@@ -63,7 +63,7 @@ const displaySearches = function(filteredFaq) {
 		const a = document.createElement('a');
 		a.textContent = filteredFaq[i].label;
 		a.setAttribute('class','searchElement');
-		a.setAttribute('href', `#${i}`)
+		a.setAttribute('href', `#${filteredFaq[i].id}`)
 		console.log(a);
 		div.appendChild(a);
 		searchResults.appendChild(div);
