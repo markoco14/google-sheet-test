@@ -46,6 +46,7 @@ const displayFaq = function(data) {
 		p.innerHTML = faqData[i].content;
 		div.appendChild(label);
 		div.appendChild(p);
+		div.setAttribute('id', `${faqData[i].id}`)
 		faqContainer.appendChild(div);
 	}
 }
