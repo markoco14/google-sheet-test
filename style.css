@@ -1,4 +1,6 @@
-
+label {
+	font-weight: bold;
+}
 
 #searchWrapper {
 	position: relative;
