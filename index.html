@@ -6,24 +6,25 @@
 		<title>Document</title>
 		<!-- a link to a stylesheet later -->
 		<!-- get it working first -->
-		<!-- <link rel="stylesheet" href="app.css">-->
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
 		<div class="container">
 			<h1>COVID FAQ</h1>
-			<div id="searchWrapper">
+			<div id="searchWrapper" class="searchWrapper">
 				<input
 					type="text"
 					name="searchBar"
 					id="searchBar"
+					class="searchBar"
 					placeholder="Search for a character..."
 				>
+				<div id="searchResults">
+					
+				</div>
 			</div>
-			<div id="searchResults">
-				
-			</div>
-			<div id="faq-container" class="faq-container">
-				
+			<div id="faqContainer" class="faqContainer">
+
 			</div>
 		</div>
 		<script src="display-data.js"></script>

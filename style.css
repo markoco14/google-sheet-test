@@ -1,0 +1,22 @@
+
+
+#searchWrapper {
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 80%;
+}
+
+.searchBar {
+	width: 100%;
+}
+
+#searchResults {
+	width: 100%;
+}
+
+.searchElement {
+}
