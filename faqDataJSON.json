@@ -1,18 +1,28 @@
 [
 {
 "id": 1,
+"label": "What border control measures are in place? Who can enter Taiwan during the level 3 alert?",
+"content": "Non-R.O.C. nationals without a valid Alien Resident Certificate (ARC/APRC) are temporarily barred from entry. Transit travelers are temporarily barred from entry."
+},
+{
+"id": 2,
 "label": "I'm in Taichung and worried I've got COVID, what should I do? Is there a covid screening station in Taichung where I can get a rapid antigen COVID-19 test? How do I make an appointment to get tested? What are the guidelines and precautions for testing?",
 "content": "On <strong>2021/06/08</strong> <a href=\"https://www.google.com/maps/place/No.+36,+Section+3,+Huizhong+Road,+Nantun+District,+Taichung+City,+408/@24.1490126,120.6381592,17z/data=!3m1!4b1!4m5!3m4!1s0x34693dc04c42cb4f:0x425f4339d7d649df!8m2!3d24.1490126!4d120.6403479\" target=\"_blank\" rel=\"noopener noreferrer\">this hospital has set up a free, outdoors COVID-19 Fast Screening Station</a> to provide free rapid antigen testing services for Taichung citizens.<br>To get tested, <a href=\"http://www.lshosp.com.tw:8001/OINetReg/OINetReg.Reg/Reg_RegTable.aspx?HID=F&Way=Dept&DivDr=904&Date=&Noon=\" target=\"_blank\" rel=\"noopener noreferrer\">you have to make an online appointment</a> (Mon-Fri 13:00-17:00), click [English Version] at the top.<br>1. Bring ID cards, health insurance cards, and wear medical masks throughout the journey.<br>2. You can only be tested after<a href=\"http://www.lshosp.com.tw:8001/OINetReg/OINetReg.Reg/Reg_RegTable.aspx?HID=F&Way=Dept&DivDr=904&Date=&Noon=\" target=\"_blank\" rel=\"noopener noreferrer\"> making an online appointment</a> and please come early.<br>3. The screening service will be adjusted according to the supply of tests, and will stop immediately if they run out of testing materials.<br>4. If the test result is negative, you will be notified on the spot, and no paper report will be provided (result can be checked in your health passbook 1-3 days after).<br>5. Those who test positive will be transferred to the emergency room for treatment.<br>You can call the hospital service line <a href=\"tel:0422586688\">04-2258-66-88</a> for more information but English service is not guaranteed."
 },
 {
-"id": 2,
+"id": 3,
 "label": "Is Taichung City hall still open for citizens? Where can I go for government services in Taichung during the current pandemic?",
 "content": "Taichung City hall public services require access control and are centralized at Taichung City Yangming building on the first floor at <a href=\"https://www.google.com/maps/place/Yangming+Building+of+Taichung+City+Government/@24.2470272,120.7184282,17z/data=!4m5!3m4!1s0x34691a0460148039:0x608f1ee43f157a65!8m2!3d24.2467878!4d120.7206751?shorturl=1\" target=\"_blank\" rel=\"noopener noreferrer\">No. 36, Yangming Street, Fengyuan District, Taichung City, 420</a>. Remaining floors and spaces are only accessible to city employees."
 },
 {
-"id": 3,
+"id": 4,
 "label": "Are there any English videos with information about confirmed COVID-19 cases?",
 "content": "Yes. The CDC has released 3 videos on their <a href=\"https://www.youtube.com/channel/UCyh91eTE9jA3ykg8W3_v3DQ\" target=\"_blank\" rel=\"noopener noreferrer\">official YouTube channel</a> with English audio and subtitles: <a href=\"https://www.youtube.com/watch?v=lDo9wShQVps&t=4s\" target=\"_blank\" rel=\"noopener noreferrer\">What to do if you had contact with a confirmed COVID-19 case?</a> <a href=\"https://www.youtube.com/watch?v=maauaPQZlEw&t=5s\" target=\"_blank\" rel=\"noopener noreferrer\">What to do if you've been diagnosed with COVID-19?</a> <a href=\"https://www.youtube.com/watch?v=6Sd47AvS3z0&t=5s\" target=\"_blank\" rel=\"noopener noreferrer\">How to care for a COVID-19 patient at home?</a> We appreciate the CDC's continued efforts and hope to see more COVID-19 videos soon."
+},
+{
+"id": 5,
+"label": "What epidemic alert level is Taiwan in currently? What are the guidelines and rules for Taichung at this moment? What's the COVID-level 3 timeline or end date?",
+"content": "CDC has extended the Nationwide Level 3 epidemic alert to June 28, 2021 and lists regulations and guidelines in English. Here's a quick summary: Obligated/Fined: Always wear masks outdoors. Those with symptoms should seek medical attention. Supermarkets, stores, and businesses must implement crowd control measures. Closed/Banned: All parks, night markets, playgrounds, schools & daycare, community services, sports venues, libraries, tourist sites, leisure & entertainment venues, weddings & memorials, places of worship are closed. No more than 5 people may gather indoors, no more than 10 people outdoors (those living together not included). Advised: Social distancing, reduce shopping frequency, distance working, flexible hours, avoid all non-essential travel to all countries. Others: Food & beverage vendors only takeout. Enhanced disinfection of public places and public transport, details on our maps page. 2021/06/10 UPDATE: Additional tourist sites that are closed in Taichung: Dakeng hiking trails, Dajia Tiezhenshan, Daan Coastal Tourist Center (Incl beach area), Tanzi Xintian, Longjing Zhukeng Nanliao, Dadu Great Wall, Wuri Zhigaozhen, and Guguan Hot Spring Hongfeng Bicycle Green Way, Hou-Fong bike path, Tanya Shen Green Bikeway Travel Service Centers: Taiwan Railway Taichung Station, High Speed ​​Railway (HSR) Taichung Station, Taichung Airport, Shigang, Dajia Tiezhenshan"
 },
 {
 "id": "",
