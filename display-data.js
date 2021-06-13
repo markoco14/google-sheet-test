@@ -6,23 +6,55 @@ const searchBar = document.getElementById('searchBar');
 const searchResults = document.getElementById('searchResults');
 let faqData = [];
 let filteredFaq = [];
+let doNotUse = ['and', 'but', 'or', 'if'];
+
+//this will work better if I define some functions
+
 
 //create search bar listener function
 searchBar.addEventListener('keyup', (e) => {
+	let labelYes;
+	let contentYes;
 	const searchString = e.target.value.toLowerCase();
 	const searchArray = searchString.split(' ');
 	console.log("Your search array.")
 	console.log(searchArray);
-	filteredFaq = faqData.filter((question) => {
+
+	//what is the problem.. 
+	//my function was going through each of the questions.
+	//but it was always stopping after the first return
+	//even if it was false
+	//and not checking the rest of the search terms
+	for (i = 0; i < faqData.length; i++) {
 		for (j = 0; j < searchArray.length; j++) {
-			return (
-				question.label.toLowerCase().includes(searchArray[j]) || 
-				question.content.toLowerCase().includes(searchArray[j])
-			);
+			console.log(`Checking question${i+1} for ${searchArray[j]}`);
+			if (faqData[i].label.toLowerCase().includes(searchArray[j].toLowerCase())) {
+				console.log(`yes, question${i+1} includes ${searchArray[j]}`)
+				labelYes = true;
+			} else {
+				labelYes = false;
+			}
+			console.log(`Checking answer${i+1} for ${searchArray[j]}`);
+			if (faqData[i].content.toLowerCase().includes(searchArray[j].toLowerCase())) {
+				console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
+				contentYes = true;
+			} else {
+				contentYes = false;
+			}
+			console.log(labelYes);
+			console.log(contentYes);
+
+
 		}
-	});
+		
+	}
+	
+
+	//log out the filterdFaq, test if it worked
 	console.log("Your search results");
 	console.log(filteredFaq);
+
+	//call the display searches function
 	displaySearches(filteredFaq)
 });
 
@@ -31,6 +63,7 @@ const loadFaq = async () => {
 		const res = await fetch('https://markoco14.github.io/google-sheet-test/faqDataJSON.json');
 		console.log(res);
 		faqData = await res.json();
+		faqData.pop(faqData.length-1);
 		console.log(faqData);
 		displayFaq(faqData);	
 	} catch (err) {
@@ -90,3 +123,19 @@ const displaySearches = function(filteredFaq) {
 
 loadFaq()
 
+
+
+/*
+filteredFaq = faqData.filter((question) => {
+		for (j = 0; j < searchArray.length; j++) {
+			console.log(j);
+			return (
+				(question.label.toLowerCase().includes(searchArray[j]) &&
+				question.content.toLowerCase().includes(searchArray[j])) || 
+				question.label.toLowerCase().includes(searchArray[j]) || 
+				question.content.toLowerCase().includes(searchArray[j])
+			);
+
+		}
+	});
+*/
