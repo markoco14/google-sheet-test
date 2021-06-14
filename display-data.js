@@ -6,57 +6,110 @@ const searchBar = document.getElementById('searchBar');
 const searchResults = document.getElementById('searchResults');
 let faqData = [];
 let filteredFaq = [];
-let doNotUse = ['and', 'but', 'or', 'if'];
+let doNotUse = ['and', 'but', 'or', 'if', '', 'an', 'I'];
 
 //this will work better if I define some functions
 
-
 //create search bar listener function
 searchBar.addEventListener('keyup', (e) => {
+	filteredFaq = [];
+	//create trackers which questions to include
 	let labelYes;
 	let contentYes;
+
+	//create the search array
 	const searchString = e.target.value.toLowerCase();
-	const searchArray = searchString.split(' ');
-	console.log("Your search array.")
+	let searchArray = searchString.split(' ');
+	
+	//const filteredSearchArray = [];
+	console.log("We start here with the search array.")
 	console.log(searchArray);
 
-	//what is the problem.. 
-	//my function was going through each of the questions.
-	//but it was always stopping after the first return
-	//even if it was false
-	//and not checking the rest of the search terms
+	//remove do not use search terms
+	removeNotUseTerms(searchArray, doNotUse)
+
+	//check for search term matches
 	for (i = 0; i < faqData.length; i++) {
 		for (j = 0; j < searchArray.length; j++) {
-			console.log(`Checking question${i+1} for ${searchArray[j]}`);
+			//console.log(`Checking question${i+1} for ${searchArray[j]}`);
+			//check if questions match search terms
 			if (faqData[i].label.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				console.log(`yes, question${i+1} includes ${searchArray[j]}`)
+				//console.log(`yes, question${i+1} includes ${searchArray[j]}`);
 				labelYes = true;
 			} else {
 				labelYes = false;
 			}
-			console.log(`Checking answer${i+1} for ${searchArray[j]}`);
+			//console.log(`Checking answer${i+1} for ${searchArray[j]}`);
+			//check if answers match search terms
 			if (faqData[i].content.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
+				//console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
 				contentYes = true;
 			} else {
 				contentYes = false;
 			}
-			console.log(labelYes);
-			console.log(contentYes);
-
-
+			//console.log(`label yes is ${labelYes}`);
+			//console.log(`content yes is ${contentYes}`);
+			
+			//add questions and answers to filteredFaq
+			if (labelYes === true || contentYes === true) {
+				//break;
+				//here I need to set the qualities
+				//of id, label, content,
+				//filteredFaq[i]
+				/*filteredFaq.push(faqData[i]);
+				console.log(filteredFaq);*/
+				if (!filteredFaq.includes(faqData[i])) {
+					//console.log("not already in filteredFaq.")
+					//console.log(`question${i+1} will be added to the search results`);
+					//console.log(`Storing ID:${i+1} in filteredFaq`)
+					filteredFaq.push(faqData[i]);
+				} else {
+					//console.log("This is already in the search, it won't be included again");
+				}
+			} else {
+				//console.log(`question${i+1} will not be added to the search results`);
+			}	
+			
+			//i think one problem is that i need to just
+			//track which i values will go into the
+			//filteredFAQ
+			//maybe I can populate that into an Array
+			//and send the array to the display searches function
 		}
-		
 	}
-	
 
 	//log out the filterdFaq, test if it worked
-	console.log("Your search results");
-	console.log(filteredFaq);
+	//console.log("Your search results");
+	//console.log(filteredFaq);
+
+	//clean up filteredFaq here, remove duplicate search terms
+
 
 	//call the display searches function
 	displaySearches(filteredFaq)
 });
+
+//function to remove do not use search terms
+let removeNotUseTerms = function(searchArray, doNotUse) {
+	let testArray = [];
+	console.log(`search array length: ${searchArray.length}`);
+	console.log(`now we remove do not use search terms`);
+	for (i = 0; i < searchArray.length; i++) {
+		console.log(`this is searchArray index: ${i}`);
+		if (doNotUse.includes(searchArray[i])) {
+			console.log(`We found index ${i} matches doNotUse words`);
+			console.log(`Removing index ${i} from search array`);
+			searchArray.splice(i);
+			console.log(searchArray);
+		} else {
+			console.log(`searchArray index: ${i} is all good`);
+		}
+		console.log(searchArray);
+	}
+	console.log(`logging search array`);
+	console.log(searchArray);
+	return searchArray;
+}
 
 const loadFaq = async () => {
 	try {
@@ -101,6 +154,7 @@ const displaySearches = function(filteredFaq) {
 		searchResults.removeChild(searchResults.firstChild);
 	}
 
+
 	//loop through filtered search data
 	for (i = 0; i < filteredFaq.length; i++) {
 		const div = document.createElement('div');
@@ -139,3 +193,30 @@ filteredFaq = faqData.filter((question) => {
 		}
 	});
 */
+
+/*
+	for (i = 0; i < searchArray.length; i++) {
+		console.log(`this is searchArray index: ${i}`);
+		if (doNotUse.includes(searchArray[i])) {
+			console.log(`We found index ${i} matches doNotUse words`);
+			console.log(`Removing index ${i} from search array`);
+			searchArray.splice(i);
+			console.log(searchArray);
+		} else {
+			console.log(`searchArray index: ${i} is all good`);
+		}
+		for (j = 0; j < doNotUse.length; j++) {
+			if (doNotUse[j].includes(searchArray[i])) {
+				tracker = true;
+				console.log(`${searchArray[i]} IS in doNotUse`);
+			} else {
+				console.log(`${searchArray[i]} is not in doNotUse`);
+			}
+			if (tracker === true) {
+				console.log(`removing index ${i} from search array`);
+				searchArray.splice(searchArray[i]);
+				console.log(searchArray);
+			}
+		}
+		console.log(searchArray);
+	}*/
