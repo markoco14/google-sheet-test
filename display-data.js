@@ -116,7 +116,7 @@ const loadFaq = async () => {
 		const res = await fetch('https://markoco14.github.io/google-sheet-test/faqDataJSON.json');
 		console.log(res);
 		faqData = await res.json();
-		faqData.pop(faqData.length-1);
+		//faqData.pop(faqData.length-1);
 		console.log(faqData);
 		displayFaq(faqData);	
 	} catch (err) {
@@ -129,7 +129,7 @@ const displayFaq = function(data) {
 		const div = document.createElement('div');
 		const input = document.createElement('input');
 		const label = document.createElement('label');
-		const p = document.createElement('p');
+		const content = document.createElement('div');
 
 		//set input and label attributes
 		input.setAttribute('id', `toggle${faqData[i].id}`)
@@ -139,10 +139,10 @@ const displayFaq = function(data) {
 	
 		//set question and answer content (innerHTML)
 		label.innerHTML = faqData[i].label;
-		p.innerHTML = faqData[i].content;
+		content.innerHTML = faqData[i].content;
 		div.appendChild(input);
 		div.appendChild(label);
-		div.appendChild(p);
+		div.appendChild(content);
 		div.setAttribute('id', `question${faqData[i].id}`)
 		faqContainer.appendChild(div);
 	}
@@ -159,8 +159,8 @@ const displaySearches = function(filteredFaq) {
 	for (i = 0; i < filteredFaq.length; i++) {
 		const div = document.createElement('div');
 		const a = document.createElement('a');
-		a.textContent = filteredFaq[i].label;
-		a.setAttribute('class','searchElement');
+		a.textContent = filteredFaq[i].question;
+		div.setAttribute('class','searchElement');
 		a.setAttribute('href', `#question${filteredFaq[i].id}`)
 		div.appendChild(a);
 		searchResults.appendChild(div);

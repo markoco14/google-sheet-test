@@ -7,6 +7,10 @@ label {
 	font-weight: bold;
 }
 
+.red {
+	color: rgb(204,90,90);
+}
+
 .checkbox {
 	display: none;
 }
@@ -30,8 +34,9 @@ label {
 	width: 100%;
 }
 
-.searchElement {
-	margin-bottom: 5px;
+.searchElement{
+	padding: 5px 0px;
+	border-bottom: 0.5px rgba(200,200,200,0.8) solid;
 }
 
 .faqContainer {
