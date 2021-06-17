@@ -82,7 +82,7 @@ searchBar.addEventListener('keyup', (e) => {
 		for (j = 0; j < searchArray.length; j++) {
 			//console.log(`Checking question${i+1} for ${searchArray[j]}`);
 			//check if questions match search terms
-			if (faqData[i].label.toLowerCase().includes(searchArray[j].toLowerCase())) {
+			if (faqData[i].question.toLowerCase().includes(searchArray[j].toLowerCase())) {
 				//console.log(`yes, question${i+1} includes ${searchArray[j]}`);
 				labelYes = true;
 			} else {
@@ -90,7 +90,7 @@ searchBar.addEventListener('keyup', (e) => {
 			}
 			//console.log(`Checking answer${i+1} for ${searchArray[j]}`);
 			//check if answers match search terms
-			if (faqData[i].content.toLowerCase().includes(searchArray[j].toLowerCase())) {
+			if (faqData[i].answer.toLowerCase().includes(searchArray[j].toLowerCase())) {
 				//console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
 				contentYes = true;
 			} else {
@@ -161,7 +161,7 @@ const displaySearches = function(filteredFaq) {
 	for (i = 0; i < filteredFaq.length; i++) {
 		const div = document.createElement('div');
 		const a = document.createElement('a');
-		a.textContent = filteredFaq[i].label;
+		a.textContent = filteredFaq[i].question;
 		div.setAttribute('class','searchContainer');
 		a.setAttribute('href', `#question${filteredFaq[i].id}`)
 		a.setAttribute('class', 'searchLink');
