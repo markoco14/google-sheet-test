@@ -161,7 +161,7 @@ const displaySearches = function(filteredFaq) {
 	for (i = 0; i < filteredFaq.length; i++) {
 		const div = document.createElement('div');
 		const a = document.createElement('a');
-		a.textContent = filteredFaq[i].question;
+		a.textContent = filteredFaq[i].label;
 		div.setAttribute('class','searchContainer');
 		a.setAttribute('href', `#question${filteredFaq[i].id}`)
 		a.setAttribute('class', 'searchLink');
