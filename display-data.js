@@ -6,9 +6,11 @@ const searchBar = document.getElementById('searchBar');
 const searchResults = document.getElementById('searchResults');
 let faqData = [];
 let filteredFaq = [];
-let doNotUse = ['and', 'but', 'or', 'if', '', 'an', 'I'];
 
-//this will work better if I define some functions
+//create do not use punctuation array
+let dnuPunctuation = ["?", ".", ",", "/", "<", ">", "'", '"', ";", ":", "[", "]", "{", "}", "|", "`", "~", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "\\"] ;
+//create do not use word array
+let dnuWords = ["covid", "taichung", "taiwan", "what", "is", "", "i", "you", "he", "she", "it", "we", "they", "am", "are", "m", "re", "can", "may", "will", "ll", "could", "would", "should", "have", "ve", "maybe", "go", "a", "the", "an", "for", "as", "on", "in", "at", "next", "by", "to", "give", "let", "take", "me", "her", "his", "him", "hers", "their", "theirs", "its", "us", "our", "ours", "mine", "your", "yours", "gonna", "want", "like", "love", "wanna", "gonna", "lot", "many", "much", "very", "good", "bad", "still", "out", "next", "first", "last", "previous", "before", "after", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "and", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //create search bar listener function
 searchBar.addEventListener('keyup', (e) => {
@@ -19,14 +21,64 @@ searchBar.addEventListener('keyup', (e) => {
 
 	//create the search array
 	const searchString = e.target.value.toLowerCase();
-	let searchArray = searchString.split(' ');
+
+	//initialize filterString to filter symbols and special characters
+	let filterString = searchString;
+	console.log('filter string')
+	console.log(filterString);
 	
-	//const filteredSearchArray = [];
-	console.log("We start here with the search array.")
+	//get rid of all punctuation from the search string 
+	for (i = 0; i < dnuPunctuation.length; i++) {
+		while (filterString.includes(dnuPunctuation[i])) {
+			console.log(`We found a/an ${dnuPunctuation[i]} in your filter string`);
+			console.log(`Removing ${dnuPunctuation[i]} from your filter string`);
+			filterString = filterString.replace(`${dnuPunctuation[i]}`, '');
+			console.log(`Your new filter string`);
+			console.log(filterString);
+		}
+	}
+
+	//split the filter string into the search array
+	let searchArray = filterString.split(' ');
 	console.log(searchArray);
+	
+	/*
+	to use the filter method.. find the ones that are NOT in DNU
+	and add them to another new array. then return that new array.
+	it will become the value of the filteredSearch
+	console log it to test it in different circumstances
+	and if it works just replace search array with filtered array
+	*/
 
 	//remove do not use search terms
-	removeNotUseTerms(searchArray, doNotUse)
+	//removeNotUseTerms(searchArray, doNotUse)
+
+	//taking out DNU search terms now
+	let badSearchArray = [];
+	let goodSearchArray = [];
+	//console.log(`search array length: ${searchArray.length}`);
+	//console.log(`now we remove do not use search terms`);
+	for (i = 0; i < searchArray.length; i++) {
+		//console.log(`this is searchArray index: ${i}`);
+		if (dnuWords.includes(searchArray[i])) {
+			//console.log(`We found index ${i} matches doNotUse words`);
+			//console.log(`Adding index ${i} to badSearchArray`);
+			badSearchArray.push(searchArray[i]);
+			//console.log(badSearchArray);
+		} else {
+			//console.log(`searchArray index: ${i} is all good`);
+			//console.log(`Adding index ${i} to goodSearchArray`);
+			goodSearchArray.push(searchArray[i]);
+			console.log(goodSearchArray);
+		}
+	}
+	//console.log("Making searchArray equal to goodSearchArray");
+	searchArray = goodSearchArray;
+	//console.log('logging searchArray');
+	//console.log(searchArray);
+	//console.log(`logging search array`);
+	//console.log(searchArray);
+	//return searchArray;
 
 	//check for search term matches
 	for (i = 0; i < faqData.length; i++) {
@@ -69,12 +121,6 @@ searchBar.addEventListener('keyup', (e) => {
 			} else {
 				//console.log(`question${i+1} will not be added to the search results`);
 			}	
-			
-			//i think one problem is that i need to just
-			//track which i values will go into the
-			//filteredFAQ
-			//maybe I can populate that into an Array
-			//and send the array to the display searches function
 		}
 	}
 
@@ -90,30 +136,39 @@ searchBar.addEventListener('keyup', (e) => {
 });
 
 //function to remove do not use search terms
-let removeNotUseTerms = function(searchArray, doNotUse) {
-	let testArray = [];
+/*let removeNotUseTerms = function(searchArray, doNotUse) {
+	let badSearchArray = [];
+	let goodSearchArray = [];
 	console.log(`search array length: ${searchArray.length}`);
 	console.log(`now we remove do not use search terms`);
 	for (i = 0; i < searchArray.length; i++) {
 		console.log(`this is searchArray index: ${i}`);
 		if (doNotUse.includes(searchArray[i])) {
 			console.log(`We found index ${i} matches doNotUse words`);
-			console.log(`Removing index ${i} from search array`);
-			searchArray.splice(i);
-			console.log(searchArray);
+			console.log(`Adding index ${i} to badSearchArray`);
+			badSearchArray.push(searchArray[i]);
+			console.log(badSearchArray);
 		} else {
 			console.log(`searchArray index: ${i} is all good`);
+			console.log(`Adding index ${i} to goodSearchArray`);
+			goodSearchArray.push(searchArray[i]);
+			console.log(goodSearchArray);
 		}
-		console.log(searchArray);
+		//console.log(searchArray);
 	}
-	console.log(`logging search array`);
+	console.log("Making searchArray equal to goodSearchArray");
+	searchArray = goodSearchArray;
+	console.log('logging searchArray');
 	console.log(searchArray);
-	return searchArray;
-}
+	//console.log(`logging search array`);
+	//console.log(searchArray);
+	//return searchArray;
+}*/
 
 const loadFaq = async () => {
+	let url = "https://markoco14.github.io/google-sheet-test/faqDataJSON.json";
 	try {
-		const res = await fetch('https://markoco14.github.io/google-sheet-test/faqDataJSON.json');
+		const res = await fetch(url);
 		console.log(res);
 		faqData = await res.json();
 		//faqData.pop(faqData.length-1);
@@ -124,30 +179,7 @@ const loadFaq = async () => {
 	}
 };
 
-const displayFaq = function(data) {
-	for (i = 0; i < faqData.length; i++) {
-		const div = document.createElement('div');
-		const input = document.createElement('input');
-		const label = document.createElement('label');
-		const content = document.createElement('div');
-
-		//set input and label attributes
-		input.setAttribute('id', `toggle${faqData[i].id}`)
-		input.setAttribute('class', 'checkbox');
-		input.setAttribute('type', 'checkbox');
-		label.setAttribute('for', `toggle${faqData[i].id}`)
-	
-		//set question and answer content (innerHTML)
-		label.innerHTML = faqData[i].label;
-		content.innerHTML = faqData[i].content;
-		div.appendChild(input);
-		div.appendChild(label);
-		div.appendChild(content);
-		div.setAttribute('id', `question${faqData[i].id}`)
-		faqContainer.appendChild(div);
-	}
-}
-
+//this function displays the matching search results under the search bar
 const displaySearches = function(filteredFaq) {
 	//remove all current search results
 	while (searchResults.firstChild) {
@@ -160,8 +192,9 @@ const displaySearches = function(filteredFaq) {
 		const div = document.createElement('div');
 		const a = document.createElement('a');
 		a.textContent = filteredFaq[i].question;
-		div.setAttribute('class','searchElement');
+		div.setAttribute('class','searchContainer');
 		a.setAttribute('href', `#question${filteredFaq[i].id}`)
+		a.setAttribute('class', 'searchLink');
 		div.appendChild(a);
 		searchResults.appendChild(div);
 	}
@@ -177,6 +210,20 @@ const displaySearches = function(filteredFaq) {
 
 loadFaq()
 
+/* this is code to put back in 
+if (doNotUse.includes(searchArray[i])) {
+			console.log(`We found index ${i} matches doNotUse words`);
+			console.log(`Removing index ${i} from search array`);
+			console.log(`next line is what splice returns`);
+			console.log(searchArray.splice(i));
+			searchArray.splice(i);
+			console.log('next line is the array after splice');
+			console.log(searchArray);
+			
+		} else {
+			console.log(`searchArray index: ${i} is all good`);
+		}
+*/
 
 
 /*
