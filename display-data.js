@@ -135,45 +135,18 @@ searchBar.addEventListener('keyup', (e) => {
 	displaySearches(filteredFaq)
 });
 
-//function to remove do not use search terms
-/*let removeNotUseTerms = function(searchArray, doNotUse) {
-	let badSearchArray = [];
-	let goodSearchArray = [];
-	console.log(`search array length: ${searchArray.length}`);
-	console.log(`now we remove do not use search terms`);
-	for (i = 0; i < searchArray.length; i++) {
-		console.log(`this is searchArray index: ${i}`);
-		if (doNotUse.includes(searchArray[i])) {
-			console.log(`We found index ${i} matches doNotUse words`);
-			console.log(`Adding index ${i} to badSearchArray`);
-			badSearchArray.push(searchArray[i]);
-			console.log(badSearchArray);
-		} else {
-			console.log(`searchArray index: ${i} is all good`);
-			console.log(`Adding index ${i} to goodSearchArray`);
-			goodSearchArray.push(searchArray[i]);
-			console.log(goodSearchArray);
-		}
-		//console.log(searchArray);
-	}
-	console.log("Making searchArray equal to goodSearchArray");
-	searchArray = goodSearchArray;
-	console.log('logging searchArray');
-	console.log(searchArray);
-	//console.log(`logging search array`);
-	//console.log(searchArray);
-	//return searchArray;
-}*/
-
 const loadFaq = async () => {
 	let url = "https://markoco14.github.io/google-sheet-test/faqDataJSON.json";
+	/* url for script link
+	<script src="https://markoco14.github.io/google-sheet-test/display-data.js"></script>
+	*/
+
 	try {
 		const res = await fetch(url);
 		console.log(res);
 		faqData = await res.json();
-		//faqData.pop(faqData.length-1);
 		console.log(faqData);
-		displayFaq(faqData);	
+		//displayFaq(faqData);	
 	} catch (err) {
 		console.log(err);
 	}
@@ -209,61 +182,3 @@ const displaySearches = function(filteredFaq) {
 }
 
 loadFaq()
-
-/* this is code to put back in 
-if (doNotUse.includes(searchArray[i])) {
-			console.log(`We found index ${i} matches doNotUse words`);
-			console.log(`Removing index ${i} from search array`);
-			console.log(`next line is what splice returns`);
-			console.log(searchArray.splice(i));
-			searchArray.splice(i);
-			console.log('next line is the array after splice');
-			console.log(searchArray);
-			
-		} else {
-			console.log(`searchArray index: ${i} is all good`);
-		}
-*/
-
-
-/*
-filteredFaq = faqData.filter((question) => {
-		for (j = 0; j < searchArray.length; j++) {
-			console.log(j);
-			return (
-				(question.label.toLowerCase().includes(searchArray[j]) &&
-				question.content.toLowerCase().includes(searchArray[j])) || 
-				question.label.toLowerCase().includes(searchArray[j]) || 
-				question.content.toLowerCase().includes(searchArray[j])
-			);
-
-		}
-	});
-*/
-
-/*
-	for (i = 0; i < searchArray.length; i++) {
-		console.log(`this is searchArray index: ${i}`);
-		if (doNotUse.includes(searchArray[i])) {
-			console.log(`We found index ${i} matches doNotUse words`);
-			console.log(`Removing index ${i} from search array`);
-			searchArray.splice(i);
-			console.log(searchArray);
-		} else {
-			console.log(`searchArray index: ${i} is all good`);
-		}
-		for (j = 0; j < doNotUse.length; j++) {
-			if (doNotUse[j].includes(searchArray[i])) {
-				tracker = true;
-				console.log(`${searchArray[i]} IS in doNotUse`);
-			} else {
-				console.log(`${searchArray[i]} is not in doNotUse`);
-			}
-			if (tracker === true) {
-				console.log(`removing index ${i} from search array`);
-				searchArray.splice(searchArray[i]);
-				console.log(searchArray);
-			}
-		}
-		console.log(searchArray);
-	}*/
