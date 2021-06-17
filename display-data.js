@@ -11,6 +11,14 @@ let filteredFaq = [];
 
 //create search bar listener function
 searchBar.addEventListener('keyup', (e) => {
+	//initialize faqData count property
+	for (i = 0; i < faqData.length; i++) {
+		faqData[i]["count"] = 0;
+	}
+	console.log(faqData)
+
+
+	//reset filteredFaq so search terms clear..?
 	filteredFaq = [];
 	//create trackers which questions to include
 	let labelYes;
@@ -21,23 +29,23 @@ searchBar.addEventListener('keyup', (e) => {
 
 	//initialize filterString to filter symbols and special characters
 	let filterString = searchString;
-	console.log('filter string')
-	console.log(filterString);
+	//console.log('filter string')
+	//console.log(filterString);
 	
 	//get rid of all punctuation from the search string 
 	for (i = 0; i < dnuPunctuation.length; i++) {
 		while (filterString.includes(dnuPunctuation[i])) {
-			console.log(`We found a/an ${dnuPunctuation[i]} in your filter string`);
-			console.log(`Removing ${dnuPunctuation[i]} from your filter string`);
+			//console.log(`We found a/an ${dnuPunctuation[i]} in your filter string`);
+			//console.log(`Removing ${dnuPunctuation[i]} from your filter string`);
 			filterString = filterString.replace(`${dnuPunctuation[i]}`, '');
-			console.log(`Your new filter string`);
-			console.log(filterString);
+			//console.log(`Your new filter string`);
+			//console.log(filterString);
 		}
 	}
 
 	//split the filter string into the search array
 	let searchArray = filterString.split(' ');
-	console.log(searchArray);
+	//console.log(searchArray);
 	
 	/*
 	to use the filter method.. find the ones that are NOT in DNU
@@ -63,9 +71,10 @@ searchBar.addEventListener('keyup', (e) => {
 			badSearchArray.push(searchArray[i]);
 			//console.log(badSearchArray);
 		} else {
-			//console.log(`searchArray index: ${i} is all good`);
-			//console.log(`Adding index ${i} to goodSearchArray`);
+			console.log(`searchArray index: ${i} is all good`);
+			console.log(`Adding index ${i} to goodSearchArray`);
 			goodSearchArray.push(searchArray[i]);
+			console.log('logging good searcharray');
 			console.log(goodSearchArray);
 		}
 	}
@@ -83,7 +92,7 @@ searchBar.addEventListener('keyup', (e) => {
 			//console.log(`Checking question${i+1} for ${searchArray[j]}`);
 			//check if questions match search terms
 			if (faqData[i].question.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				//console.log(`yes, question${i+1} includes ${searchArray[j]}`);
+				console.log(`yes, question${i+1} includes ${searchArray[j]}`);
 				labelYes = true;
 			} else {
 				labelYes = false;
@@ -91,13 +100,27 @@ searchBar.addEventListener('keyup', (e) => {
 			//console.log(`Checking answer${i+1} for ${searchArray[j]}`);
 			//check if answers match search terms
 			if (faqData[i].answer.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				//console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
+				console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
 				contentYes = true;
 			} else {
 				contentYes = false;
 			}
 			//console.log(`label yes is ${labelYes}`);
 			//console.log(`content yes is ${contentYes}`);
+
+			//give each faqData[i] a count value if the answer matches
+			if (labelYes === true) {
+				faqData[i].count += 1;
+				console.log(`the count for faqData${i} is going up`);
+			}
+
+			//give each faqData[i] a count value if the answer matches
+			if (contentYes === true) {
+				faqData[i].count += 1;
+				console.log(`the count for faqData${i} is going up`);
+			}
+			console.log(`logging the new count value for ${i}`);
+			console.log(faqData[i].count)
 			
 			//add questions and answers to filteredFaq
 			if (labelYes === true || contentYes === true) {
@@ -118,8 +141,26 @@ searchBar.addEventListener('keyup', (e) => {
 			} else {
 				//console.log(`question${i+1} will not be added to the search results`);
 			}	
+
+			
 		}
 	}
+
+	/*filteredFaq.sort((a,b)=>b-a);*/
+	//sort filteredFaq by count here
+	function compare( a, b ) {
+	  if ( a.count < b.count ){
+	    return 1;
+	  }
+	  if ( a.count > b.count ){
+	    return -1;
+	  }
+	  return 0;
+	}
+
+	filteredFaq.sort( compare );
+	console.log("hopefully this is a sorted filteredFaq");
+	console.log(filteredFaq);
 
 	//log out the filterdFaq, test if it worked
 	//console.log("Your search results");
