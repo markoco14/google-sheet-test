@@ -76,7 +76,7 @@ searchBar.addEventListener('keyup', (e) => {
 	//console.log(searchArray);
 	//console.log(`logging search array`);
 	//console.log(searchArray);
-	//return searchArray;
+	return searchArray;
 
 	//check for search term matches
 	for (i = 0; i < faqData.length; i++) {
