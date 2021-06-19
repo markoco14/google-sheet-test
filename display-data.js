@@ -71,11 +71,11 @@ searchBar.addEventListener('keyup', (e) => {
 			badSearchArray.push(searchArray[i]);
 			//console.log(badSearchArray);
 		} else {
-			console.log(`searchArray index: ${i} is all good`);
-			console.log(`Adding index ${i} to goodSearchArray`);
+			//console.log(`searchArray index: ${i} is all good`);
+			//console.log(`Adding index ${i} to goodSearchArray`);
 			goodSearchArray.push(searchArray[i]);
-			console.log('logging good searcharray');
-			console.log(goodSearchArray);
+			//console.log('logging good searcharray');
+			//console.log(goodSearchArray);
 		}
 	}
 	//console.log("Making searchArray equal to goodSearchArray");
