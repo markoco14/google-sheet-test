@@ -173,9 +173,9 @@ const loadFaq = async () => {
 
 	try {
 		const res = await fetch(url);
-		//console.log(res);
+		console.log(res);
 		faqData = await res.json();
-		//console.log(faqData);
+		console.log(faqData);
 		//displayFaq(faqData);	
 	} catch (err) {
 		console.log(err);
