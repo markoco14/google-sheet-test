@@ -15,7 +15,7 @@ searchBar.addEventListener('keyup', (e) => {
 	for (i = 0; i < faqData.length; i++) {
 		faqData[i]["count"] = 0;
 	}
-	//console.log(faqData)
+	console.log(faqData)
 
 
 	//reset filteredFaq so search terms clear..?
@@ -47,6 +47,14 @@ searchBar.addEventListener('keyup', (e) => {
 	let searchArray = filterString.split(' ');
 	//console.log(searchArray);
 	
+	/*
+	to use the filter method.. find the ones that are NOT in DNU
+	and add them to another new array. then return that new array.
+	it will become the value of the filteredSearch
+	console log it to test it in different circumstances
+	and if it works just replace search array with filtered array
+	*/
+
 	//remove do not use search terms
 	//removeNotUseTerms(searchArray, doNotUse)
 
@@ -63,11 +71,11 @@ searchBar.addEventListener('keyup', (e) => {
 			badSearchArray.push(searchArray[i]);
 			//console.log(badSearchArray);
 		} else {
-			//console.log(`searchArray index: ${i} is all good`);
-			//console.log(`Adding index ${i} to goodSearchArray`);
+			console.log(`searchArray index: ${i} is all good`);
+			console.log(`Adding index ${i} to goodSearchArray`);
 			goodSearchArray.push(searchArray[i]);
-			//console.log('logging good searcharray');
-			//console.log(goodSearchArray);
+			console.log('logging good searcharray');
+			console.log(goodSearchArray);
 		}
 	}
 	//console.log("Making searchArray equal to goodSearchArray");
@@ -76,7 +84,7 @@ searchBar.addEventListener('keyup', (e) => {
 	//console.log(searchArray);
 	//console.log(`logging search array`);
 	//console.log(searchArray);
-	return searchArray;
+	//return searchArray;
 
 	//check for search term matches
 	for (i = 0; i < faqData.length; i++) {
@@ -84,7 +92,7 @@ searchBar.addEventListener('keyup', (e) => {
 			//console.log(`Checking question${i+1} for ${searchArray[j]}`);
 			//check if questions match search terms
 			if (faqData[i].question.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				//console.log(`yes, question${i+1} includes ${searchArray[j]}`);
+				console.log(`yes, question${i+1} includes ${searchArray[j]}`);
 				labelYes = true;
 			} else {
 				labelYes = false;
@@ -92,7 +100,7 @@ searchBar.addEventListener('keyup', (e) => {
 			//console.log(`Checking answer${i+1} for ${searchArray[j]}`);
 			//check if answers match search terms
 			if (faqData[i].answer.toLowerCase().includes(searchArray[j].toLowerCase())) {
-				//console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
+				console.log(`yes, answer${i+1} includes ${searchArray[j]}`)
 				contentYes = true;
 			} else {
 				contentYes = false;
@@ -103,16 +111,16 @@ searchBar.addEventListener('keyup', (e) => {
 			//give each faqData[i] a count value if the answer matches
 			if (labelYes === true) {
 				faqData[i].count += 1;
-				//console.log(`the count for faqData${i} is going up`);
+				console.log(`the count for faqData${i} is going up`);
 			}
 
 			//give each faqData[i] a count value if the answer matches
 			if (contentYes === true) {
 				faqData[i].count += 1;
-				//console.log(`the count for faqData${i} is going up`);
+				console.log(`the count for faqData${i} is going up`);
 			}
-			//console.log(`logging the new count value for ${i}`);
-			//console.log(faqData[i].count)
+			console.log(`logging the new count value for ${i}`);
+			console.log(faqData[i].count)
 			
 			//add questions and answers to filteredFaq
 			if (labelYes === true || contentYes === true) {
@@ -151,8 +159,8 @@ searchBar.addEventListener('keyup', (e) => {
 	}
 
 	filteredFaq.sort( compare );
-	//console.log("hopefully this is a sorted filteredFaq");
-	//console.log(filteredFaq);
+	console.log("hopefully this is a sorted filteredFaq");
+	console.log(filteredFaq);
 
 	//log out the filterdFaq, test if it worked
 	//console.log("Your search results");
@@ -162,7 +170,7 @@ searchBar.addEventListener('keyup', (e) => {
 
 
 	//call the display searches function
-	//displaySearches(filteredFaq)
+	displaySearches(filteredFaq)
 });
 
 const loadFaq = async () => {
