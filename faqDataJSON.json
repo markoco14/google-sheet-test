@@ -108,5 +108,10 @@
         "id": 22,
         "question": "Is there a map where I can see locations for testing and vaccines in Taichung? Can you help me make an appointment and navigate to covid testing and vaccination facilities?",
         "answer": "6/20 Our new Taichung covid map is all English and shows locations for SARS-CoV2 testing and vaccinations as well as footprints of confirmed cases structured according to the dates when they visited a location. Clicking on a marker reveals more details."
+    },
+    {
+        "id": 23,
+        "question": "What to do if your residence (ARC, APRC) or staying permit (VISA) is about to expire?",
+        "answer": "ARC or APRC alien residency certificate holders:    Automatically extended with 30 days with no upper limit on the number of extensions.  Extend your leave of stay at a service station no later than 30 days after the pandemic alert has been lowered to level 2 alert.  VISA as tourist or student or originally had permission to delay departure from Taiwan:    Do not have to extend leave or stay or delay departure for the time being  Extend your leave of stay at a service station no later than 10 days after the pandemic alert has been lowered to level 2 alert."
     }
 ]
