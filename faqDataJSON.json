@@ -12,7 +12,7 @@
     {
         "id": 3,
         "question": "I'm worried I've got COVID. Is there a covid screening station in Taichung where I can get a free COVID-19 test?",
-        "answer": "UPDATE 2021/06/18 The online appointment link is no longer working but people have reported that tests are still happening at this location. You can call the Lin Shin hospital service line 04-2258-66-88 for more information but English service is not guaranteed.  On 2021/06/08 one hospital set up a free, outdoors COVID-19 Fast Screening Station to provide free rapid antigen testing services for Taichung citizens.  To get tested, you have to make an online appointment (Mon-Fri 13:00-17:00), click [English Version] at the top  Bring ID cards, health insurance cards, and wear medical masks throughout the journey. You can only be tested after making an online appointment and please come early. The screening service will be adjusted according to the supply of tests, and will stop immediately if they run out of testing materials. If the test result is negative, you will be notified on the spot, and no paper report will be provided (result can be checked in your health passbook 1-3 days after). Those who test positive will be transferred to the emergency room for treatment."
+        "answer": "UPDATE 6/18 The online appointment link is no longer working but people have reported that tests are still happening at this location. You can call the Lin Shin hospital service line 04-2258-66-88 for more information but English service is not guaranteed.  On 6/08 one hospital set up a free, outdoors COVID-19 Fast Screening Station to provide free rapid antigen testing services for Taichung citizens.  Bring ID cards, health insurance cards, and wear medical masks throughout the journey. You can only be tested after making an online appointment (Mon-Fri 13:00-17:00, click [English Version] at top) and please come early. The screening service will be adjusted according to the supply of tests, and will stop immediately if they run out of testing materials. If the test result is negative, you will be notified on the spot, and no paper report will be provided (result can be checked in your health passbook 1-3 days after). Those who test positive will be transferred to the emergency room for treatment."
     },
     {
         "id": 4,
@@ -32,7 +32,7 @@
     {
         "id": 7,
         "question": "What is the covid19 vaccination strategy in Taiwan? When will vaccines be available? Am I eligible?",
-        "answer": "2021/06/09 17:23 UPDATE: In response to COVID-19 situation in Taiwan, CECC adjusts priority list of government-funded vaccination program 2021/06/02 14:01 ARTICLE: The Central Epidemic Command Center (CECC) lists 10 priority groups, with the first 3 to receive doses immediately: Healthcare workers Central and local government epidemic prevention personnel Frontline workers with high risk of contact Those required (under special circumstances) to travel abroad ARTICLE"
+        "answer": "6/22 UPDATE: Vaccination locations and information are changing almost daily. We've added the main health facilities in Taichung to our main covid map and update as we go.   6/09 UPDATE: In response to COVID-19 situation in Taiwan, CECC adjusts priority list of government-funded vaccination program  6/02 ARTICLE: The Central Epidemic Command Center (CECC) lists 10 priority groups, with the first 3 to receive doses immediately:   Healthcare workers Central and local government epidemic prevention personnel Frontline workers with high risk of contact Those required (under special circumstances) to travel abroad"
     },
     {
         "id": 8,
@@ -72,7 +72,7 @@
     {
         "id": 15,
         "question": "Are there any maps to track COVID-19 cases and footprints?",
-        "answer": "Fengjia University has created a covid cases map where most fields can be translated This Taichung covid cases and footprints map has Chinese menus that can be translated"
+        "answer": "Our English Taichung covid map shows footprints of confirmed cases structured according to the dates when they visited a location. Clicking on a marker reveals more details.  Fengjia University has created a covid cases map where most fields can be translated"
     },
     {
         "id": 16,
@@ -82,7 +82,7 @@
     {
         "id": 17,
         "question": "Are libraries still open in Taichung? What should I do with books that I borrowed?",
-        "answer": "The libraries have adjusted their policies: The book return box is open 24/7 The upper limit of renewal is increased to 3 times. If you do not pick up the books you put on reserve, you will not be penalized. If a book that you reserved has arrived at the library, the book collection period will be postponed to July 15. If you fail to return books in time, your membership will not be revoked. If a book return period is from May 19 to June 30, it will be postponed to July 31. UPDATE 6/18: Taichung Public Library announced (Chinese) an online book delivery service (choose English) for library card holders at 70 NTD per box."
+        "answer": "UPDATE 6/18: Taichung Public Library announced (Chinese) an online book delivery service (choose English) for library card holders at 70 NTD per box.  The libraries have adjusted their policies:  The book return box is open 24/7 The upper limit of renewal is increased to 3 times. If you do not pick up the books you put on reserve, you will not be penalized. If a book that you reserved has arrived at the library, the book collection period will be postponed to July 15. If you fail to return books in time, your membership will not be revoked. If a book return period is from May 19 to June 30, it will be postponed to July 31."
     },
     {
         "id": 18,
@@ -92,17 +92,17 @@
     {
         "id": 19,
         "question": "Are there any global data sources with charts about the latest developments with the covid-19 pandemic in the world?",
-        "answer": "Worldometers has a selection of covid19 charts and data for Taiwan and other countries Our World in Data has a huge collection of COVID charts and databases. They also have a Github repository if you like to connect your own software to global coronavirus data. Check the Taiwan stats on Johns Hopkins University (JHU) website as well as global and US coronavirus maps"
+        "answer": "Worldometers has a selection of covid19 charts and data for Taiwan and other countries Our World in Data has a huge collection of COVID charts and databases. They also have a a Github repository if you like to connect your own software to global coronavirus data. Check the Taiwan stats on Johns Hopkins University (JHU) website as well as global and US coronavirus maps"
     },
     {
         "id": 20,
         "question": "Where can health workers get more information?",
-        "answer": "Elsevier's COVID-19 Healthcare Hub shares free clinical resources focused on the latest evidence-based practices for novel coronavirus. Fight Covid Taiwan shares Taiwan's governmental disease response guidelines with medical professionals and policy makers around the world"
+        "answer": "Elsevier's COVID-19 Healthcare Hub shares free clinical resources focused on the latest evidence-based practices for novel coronavirus  Fight Covid Taiwan shares Taiwan's governmental disease response guidelines with medical professionals and policy makers around the world"
     },
     {
         "id": 21,
         "question": "Do you have any covid-related information for Southeast-Asian migrant communities in Taiwan?",
-        "answer": "The Ministry of Labor (MOL) has released a Line@E-Line service to provide the latest coronavirus updates for migrant workers and a hotline at phone number 1955. Taipei non-profit organization One Forty offers a Facebook Messenger epidemic CARE chat bot and various FB pages and links. (Can be translated by clicking [See Translation] at the bottom of the post)."
+        "answer": "Taipei non-profit organization One Forty offers a Facebook Messenger epidemic CARE chat bot and various FB pages and links. (Can be translated by clicking [See Translation] at the bottom of the post).  The Ministry of Labor (MOL) has released a Line@E-Line service to provide the latest coronavirus updates for migrant workers and a hotline at phone number 1955."
     },
     {
         "id": 22,
@@ -112,6 +112,6 @@
     {
         "id": 23,
         "question": "What to do if your residence (ARC, APRC) or staying permit (VISA) is about to expire?",
-        "answer": "ARC or APRC alien residency certificate holders:    Automatically extended with 30 days with no upper limit on the number of extensions.  Extend your leave of stay at a service station no later than 30 days after the pandemic alert has been lowered to level 2 alert.  VISA as tourist or student or originally had permission to delay departure from Taiwan:    Do not have to extend leave or stay or delay departure for the time being  Extend your leave of stay at a service station no later than 10 days after the pandemic alert has been lowered to level 2 alert."
+        "answer": "ARC or APRC alien residency certificate holders:  Automatically extended with 30 days with no upper limit on the number of extensions. Extend your leave of stay at a service station no later than 30 days after the pandemic alert has been lowered to level 2 alert. VISA as tourist or student or originally had permission to delay departure from Taiwan:  Do not have to extend leave or stay or delay departure for the time being Extend your leave of stay at a service station no later than 10 days after the pandemic alert has been lowered to level 2 alert."
     }
 ]
