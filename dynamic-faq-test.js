@@ -115,7 +115,7 @@ searchBar.addEventListener('keyup', (e) => {
 });
 
 const loadFaq = async () => {
-	let url = "https://markoco14.github.io/google-sheet-test/faqDataJSON.json";
+	let url = "https://markoco14.github.io/google-sheet-test/dynamic-faq-json.json";
 	/* url for script link
 	<script src="https://markoco14.github.io/google-sheet-test/display-data.js"></script>
 	*/
@@ -159,6 +159,21 @@ const displaySearches = function(filteredFaq) {
 
 const displayFaqContent = async () => {
 	console.log("Data downloaded, copy FAQ to page");
+	for (i = 0; i < faqData.length; i++) {
+		//create elements
+		let details = document.createElement('details');
+		let summary = document.createElement('summary');
+		let paragraph = document.createElement('p');
+
+		//set text content of elements
+		summary.innerHTML = `<strong>${faqData[i].question}</strong>`;
+		paragraph.textContent = faqData[i].answer;
+
+		//append elements to page
+		details.appendChild(summary);
+		details.appendChild(paragraph);
+		document.body.appendChild(details);
+	}
 }
 
 
