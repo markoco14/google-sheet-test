@@ -167,7 +167,12 @@ const displayFaqContent = async () => {
 
 		//set text content of elements
 		summary.innerHTML = `<strong>${faqData[i].question}</strong>`;
-		paragraph.textContent = faqData[i].answer;
+		if(faqData[i].content) {
+			paragraph.innerHTML = faqData[i].content;
+		} else {
+			paragraph.textContent = faqData[i].answer;
+
+		}
 
 		//append elements to page
 		details.appendChild(summary);
