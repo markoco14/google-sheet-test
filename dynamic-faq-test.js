@@ -176,11 +176,44 @@ const displayFaqContent = async () => {
 
 		}
 
-
 		//set ID's for anchor links
 		details.setAttribute('id', `question${faqData[i].id}`)
 		details.setAttribute('class', faqData[i].id)
 		
+		details.addEventListener('click', (evt) => {
+			evt.preventDefault();
+			let tracker;
+			//your code goes here
+			//so I need the function to know which one has been clicked
+			//and I think that is evt
+			//from there I think I can check for a match in ID? 
+			//and then flip the switch on the open variable
+			//check all the details to see if open
+			//close if open
+			for (i = 0; i < detailsArray.length; i++) {
+				if (detailsArray[i].open) {
+					detailsArray[i].open = false;
+				}	
+			}
+
+			for (i = 0; i < detailsArray.length; i++) {
+				if (evt.target.textContent === detailsArray[i].innerText) {
+					console.log(`We found it at ${i}`)
+					tracker = i;
+				}
+			}
+
+			console.log(tracker)
+
+			//this is where the program goes wrong
+			//I figured out that it does close itself back down
+			//but only when you click the expanded details.
+			if (!evt.target.open) {
+				detailsArray[tracker].open = true;
+			} else {
+				detailsArray[tracker].open = false;
+			}
+		});
 
 		//add details to array so they can be worked with
 		
@@ -190,6 +223,7 @@ const displayFaqContent = async () => {
 		faqContainer.appendChild(details);
 
 		detailsArray.push(details);
+		summaryArray.push(summary);
 	}
 }
 
