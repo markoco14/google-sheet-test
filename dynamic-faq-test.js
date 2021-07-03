@@ -174,6 +174,9 @@ const displayFaqContent = async () => {
 
 		}
 
+		//set ID's for anchor links
+		details.setAttribute('id', `question${faqData[i].id}`)
+
 		//append elements to page
 		details.appendChild(summary);
 		details.appendChild(paragraph);
