@@ -181,7 +181,7 @@ const displayFaqContent = async () => {
 		details.setAttribute('class', faqData[i].id)
 		
 		details.addEventListener('click', (evt) => {
-			evt.preventDefault();
+			//evt.preventDefault();
 			let tracker;
 			//your code goes here
 			//so I need the function to know which one has been clicked
@@ -208,11 +208,11 @@ const displayFaqContent = async () => {
 			//this is where the program goes wrong
 			//I figured out that it does close itself back down
 			//but only when you click the expanded details.
-			if (!evt.target.open) {
+			/*if (!evt.target.open) {
 				detailsArray[tracker].open = true;
 			} else {
 				detailsArray[tracker].open = false;
-			}
+			}*/
 		});
 
 		//add details to array so they can be worked with
