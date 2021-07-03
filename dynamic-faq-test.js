@@ -180,7 +180,7 @@ const displayFaqContent = async () => {
 		//append elements to page
 		details.appendChild(summary);
 		details.appendChild(paragraph);
-		document.body.appendChild(details);
+		faqContainer.appendChild(details);
 	}
 }
 
