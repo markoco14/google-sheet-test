@@ -157,4 +157,10 @@ const displaySearches = function(filteredFaq) {
 
 }
 
+const displayFaqContent = async () => {
+	console.log("Data downloaded, copy FAQ to page");
+}
+
+
 loadFaq()
+.then(displayFaqContent)
