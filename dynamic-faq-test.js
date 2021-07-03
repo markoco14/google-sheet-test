@@ -6,6 +6,8 @@ const searchBar = document.getElementById('searchBar');
 const searchResults = document.getElementById('searchResults');
 let faqData = [];
 let filteredFaq = [];
+let detailsArray = [];
+let summaryArray = [];
 
 
 
@@ -163,24 +165,31 @@ const displayFaqContent = async () => {
 		//create elements
 		let details = document.createElement('details');
 		let summary = document.createElement('summary');
-		let paragraph = document.createElement('p');
+		let div = document.createElement('div');
 
 		//set text content of elements
 		summary.innerHTML = `<strong>${faqData[i].question}</strong>`;
 		if(faqData[i].content) {
-			paragraph.innerHTML = faqData[i].content;
+			div.innerHTML = faqData[i].content;
 		} else {
-			paragraph.textContent = faqData[i].answer;
+			div.innerHTML = faqData[i].answer;
 
 		}
 
+
 		//set ID's for anchor links
 		details.setAttribute('id', `question${faqData[i].id}`)
+		details.setAttribute('class', faqData[i].id)
+		
 
+		//add details to array so they can be worked with
+		
 		//append elements to page
 		details.appendChild(summary);
-		details.appendChild(paragraph);
+		details.appendChild(div);
 		faqContainer.appendChild(details);
+
+		detailsArray.push(details);
 	}
 }
 
