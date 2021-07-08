@@ -31,8 +31,8 @@
     },
     {
         "id": 7,
-        "question": "What is the covid19 vaccination strategy in Taiwan? When will vaccines be available? Am I eligible?",
-        "answer": "Vaccination locations and information are changing almost daily. We've added the main health facilities in Taichung that provide English services to our covid map and update as we go.     In response to the COVID-19 situation in Taiwan, CECC adjusted their priority list of government-funded vaccination program    On 6/2 the Central Epidemic Command Center (CECC) first listed 10 priority groups.    We update our short-list based on feedback from Taichung health centers:    Healthcare workers   Central and local government epidemic prevention personnel  Frontline workers with high risk of contact  Those required (under special circumstances) to travel abroad  Residents older than 85 years (and elderly +75 in some cases)  Pregnant women"
+        "question": "What is the covid19 vaccination strategy in Taiwan? When will vaccines be available? Am I eligible? How can I register for my first dose of Moderna or Astra Zeneca?",
+        "answer": "Vaccination locations and information change almost daily. We've added the main health facilities in Taichung that provide English services to our covid map and update as we go.   7/8 It has been confirmed that anyone in Taiwan from priority group 9 and 10 can now make a reservation here. You will be put on a waiting list and receive a text (SMS) message with further instructions in the next weeks.  Click the button [Register] (登記) at the bottom left. On the next page enter both numbers om your NHCI (National Health Insurance Card).  Type the verification code and click the button [Verification] (執行身分認證) to verify. If you have a new ARC number (BXXXXXXXXX) and you receive an error, try with your old number (BCXXXXXXXX). 7/6 CDC started roll-out for groups 9 and 10 in the counties Penghu, Matsu, and Kinmen.   Adults ages 18-64 with high-risk, rare, or serious medical conditions (talk to your physician) Adults ages 50-64 6/2 the Central Epidemic Command Center (CECC) first listed 10 priority groups. This is our current short-list based on feedback from Taichung health centers:  Healthcare workers  Central and local government epidemic prevention personnel Frontline workers with high risk of contact Those required (under special circumstances) to travel abroad Residents older than 70 years Pregnant women (talk to your physician)"
     },
     {
         "id": 8,
@@ -107,7 +107,7 @@
     {
         "id": 22,
         "question": "Is there a map where I can see locations for testing and vaccines in Taichung? Can you help me make an appointment and navigate to covid testing and vaccination facilities?",
-        "answer": "7/4 Vaccinations in Taichung are limited to the first 5 priority groups and special cases. Both free and paid covid-19 tests are widely available.  We contact health authorities and facilities regularly to update locations that offer some level of English services on our map with details about how to book and where to go."
+        "answer": "7/8 Vaccinations in Taichung and Taiwan are still limited to priority groups 1-10 and special cases. Both free and paid covid-19 tests, rapid antigen or molecular RT-PCR, are widely available.  We contact health authorities and facilities regularly to update locations that offer some level of English services on our map with details about how to book and where to go."
     },
     {
         "id": 23,
